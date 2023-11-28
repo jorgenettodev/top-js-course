@@ -1,11 +1,24 @@
-// create an object called name and give it one property
-let animal = {
-    eats: true,
-    talks: false,
+let user = {
+    name: "John",
+    surname: "Smith",
+
+    set fullName(value) {
+        [this.name, this.surname] = value.split(" ");
+    },
+
+    get fullName() {
+        return `${this.name} ${this.surname}`;
+    },
 };
 
-let rabbit = {
-    jumps: true,
+let admin = {
+    __proto__: user,
+    isAdmin: true,
 };
+alert(admin.fullName); // John Smith
 
-rabbit.__proto__ = animal; // (*)
+// setter 
+admin.fullName = "Alice Cooper";
+
+alert(admin.fullName);
+alert(user.fullName);
