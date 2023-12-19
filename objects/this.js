@@ -73,5 +73,5 @@ function Vehicle(type, wheelsCount) {
 // Function invocation
 const car = Vehicle('Car', 4);
 
-
-console.log('testing code runner');
+car.type
+console.log("🚀 ~ file: this.js:77 ~ car.type:", car.type)
